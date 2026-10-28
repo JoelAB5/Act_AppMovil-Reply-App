@@ -56,7 +56,7 @@ Las actividades se realizaron en el orden solicitado:
 1. `codelab-1`: navegación adaptable, clases de tamaño y control del botón Atrás.
 2. `codelab-2`: contenido lista-detalle, tres vistas previas y pruebas automatizadas.
 
-La rama `main` contiene el resultado final. Las etiquetas permiten consultar cada etapa. El historial parte de un commit nuevo de la primera actividad; no contiene los commits antiguos de Google.
+La rama `starter` contiene el resultado final. Las etiquetas permiten consultar cada etapa. El codigo base se descargo de la rama `starter` oficial, no de la solucion `main` del codelab. El historial de entrega parte de un commit nuevo de la primera actividad; no contiene los commits antiguos de Google.
 
 ## Subir a tu propio GitHub
 
@@ -65,7 +65,7 @@ El trabajo se guarda localmente. Crea un repositorio vacío en tu cuenta de GitH
 ```powershell
 git status
 git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-git push -u origin main
+git push -u origin starter
 git push origin --tags
 ```
 

@@ -3,7 +3,7 @@
 Se completaron los dos codelabs en orden, partiendo del código inicial de `starter`:
 
 1. Navegación adaptable, guardada en la etiqueta `codelab-1`.
-2. Contenido adaptable y pruebas, guardados en `codelab-2` y en la rama `main`.
+2. Contenido adaptable y pruebas, guardados en `codelab-2` y en la rama de entrega `starter`.
 
 ## Compilación
 
