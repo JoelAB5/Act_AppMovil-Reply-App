@@ -56,24 +56,24 @@ Las actividades se realizaron en el orden solicitado:
 1. `codelab-1`: navegación adaptable, clases de tamaño y control del botón Atrás.
 2. `codelab-2`: contenido lista-detalle, tres vistas previas y pruebas automatizadas.
 
-La rama `starter` contiene el resultado final. Las etiquetas permiten consultar cada etapa. El codigo base se descargo de la rama `starter` oficial, no de la solucion `main` del codelab. El historial de entrega parte de un commit nuevo de la primera actividad; no contiene los commits antiguos de Google.
+La rama `main` contiene la entrega final. El código base se descargó de la rama `starter` oficial, no de la solución `main` del codelab. Las etiquetas permiten consultar cada etapa. El historial de entrega parte de un commit nuevo de la primera actividad; no contiene los commits antiguos de Google.
 
-## Subir a tu propio GitHub
+## Repositorio de entrega
 
-El trabajo se guarda localmente. Crea un repositorio vacío en tu cuenta de GitHub, sin README, licencia ni `.gitignore` iniciales. Abre PowerShell en esta carpeta, reemplaza la URL por la de tu repositorio y ejecuta:
+El remoto `origin` está configurado como [JoelAB5/Act_AppMovil-Reply-App](https://github.com/JoelAB5/Act_AppMovil-Reply-App), con la rama de entrega `main`. Para subir futuros cambios desde esta carpeta:
 
 ```powershell
 git status
-git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-git push -u origin starter
-git push origin --tags
+git add .
+git commit -m "Describir los cambios realizados"
+git push
 ```
 
-Los commits ya están creados con la identidad que tienes configurada en Git. La subida y el inicio de sesión en GitHub los realizas tú. No se realizó ningún push ni se configuró un remoto de Google. Las carpetas de compilación, cachés y la configuración local del SDK están excluidas mediante `.gitignore`.
+Los commits usan la identidad configurada en Git. Las carpetas de compilación, cachés y la configuración local del SDK están excluidas mediante `.gitignore`.
 
 ## Procedencia
 
-Basado en el código inicial `starter` de [Reply de Android Developers](https://github.com/google-developer-training/basic-android-kotlin-compose-training-reply-app), conservando la licencia Apache 2.0 y sus avisos de autoría. Este repositorio local tiene un historial nuevo y no tiene ningún remoto configurado.
+Basado en el código inicial `starter` de [Reply de Android Developers](https://github.com/google-developer-training/basic-android-kotlin-compose-training-reply-app), bajo licencia Apache 2.0. Este repositorio tiene un historial nuevo e independiente del historial original.
 
 Primera actividad: [navegación adaptable](https://developer.android.com/codelabs/basic-android-kotlin-compose-adaptive-navigation-for-large-screens?hl=es-419).
 
