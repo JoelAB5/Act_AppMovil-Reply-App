@@ -18,7 +18,6 @@ package com.example.reply.ui
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -57,10 +56,12 @@ import com.example.reply.data.Email
 import com.example.reply.data.MailboxType
 import com.example.reply.data.local.LocalAccountsDataProvider
 import com.example.reply.ui.utils.ReplyNavigationType
+import com.example.reply.ui.utils.ReplyContentType
 
 @Composable
 fun ReplyHomeScreen(
     navigationType: ReplyNavigationType,
+    contentType: ReplyContentType,
     replyUiState: ReplyUiState,
     onTabPressed: (MailboxType) -> Unit,
     onEmailCardPressed: (Email) -> Unit,
@@ -89,9 +90,7 @@ fun ReplyHomeScreen(
             text = stringResource(id = R.string.tab_spam)
         )
     )
-    if (navigationType == ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER
-        && replyUiState.isShowingHomepage
-    ) {
+    if (navigationType == ReplyNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(
             drawerContent = {
                 PermanentDrawerSheet(Modifier.width(dimensionResource(R.dimen.drawer_width))) {
@@ -105,10 +104,11 @@ fun ReplyHomeScreen(
                     )
                 }
             },
-            modifier = modifier
+            modifier = modifier.testTag(stringResource(R.string.navigation_drawer))
         ) {
             ReplyAppContent(
                 navigationType = navigationType,
+                contentType = contentType,
                 replyUiState = replyUiState,
                 onTabPressed = onTabPressed,
                 onEmailCardPressed = onEmailCardPressed,
@@ -118,6 +118,7 @@ fun ReplyHomeScreen(
     } else if (replyUiState.isShowingHomepage) {
         ReplyAppContent(
             navigationType = navigationType,
+            contentType = contentType,
             replyUiState = replyUiState,
             onTabPressed = onTabPressed,
             onEmailCardPressed = onEmailCardPressed,
@@ -128,6 +129,7 @@ fun ReplyHomeScreen(
         ReplyDetailsScreen(
             replyUiState = replyUiState,
             onBackPressed = onDetailScreenBackPressed,
+            isFullScreen = true,
             modifier = modifier
         )
     }
@@ -136,6 +138,7 @@ fun ReplyHomeScreen(
 @Composable
 private fun ReplyAppContent(
     navigationType: ReplyNavigationType,
+    contentType: ReplyContentType,
     replyUiState: ReplyUiState,
     onTabPressed: ((MailboxType) -> Unit),
     onEmailCardPressed: (Email) -> Unit,
@@ -147,7 +150,8 @@ private fun ReplyAppContent(
             ReplyNavigationRail(
                 currentTab = replyUiState.currentMailbox,
                 onTabPressed = onTabPressed,
-                navigationItemContentList = navigationItemContentList
+                navigationItemContentList = navigationItemContentList,
+                modifier = Modifier.testTag(stringResource(R.string.navigation_rail))
             )
         }
         Column(
@@ -155,20 +159,29 @@ private fun ReplyAppContent(
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.inverseOnSurface)
         ) {
-            ReplyListOnlyContent(
-                replyUiState = replyUiState,
-                onEmailCardPressed = onEmailCardPressed,
-                modifier = Modifier.weight(1f)
-                    .padding(
-                        horizontal = dimensionResource(R.dimen.email_list_only_horizontal_padding)
-                    )
-            )
+            if (contentType == ReplyContentType.LIST_AND_DETAIL) {
+                ReplyListAndDetailContent(
+                    replyUiState = replyUiState,
+                    onEmailCardPressed = onEmailCardPressed,
+                    modifier = Modifier.weight(1f)
+                )
+            } else {
+                ReplyListOnlyContent(
+                    replyUiState = replyUiState,
+                    onEmailCardPressed = onEmailCardPressed,
+                    modifier = Modifier.weight(1f)
+                        .padding(
+                            horizontal = dimensionResource(R.dimen.email_list_only_horizontal_padding)
+                        )
+                )
+            }
             AnimatedVisibility(visible = navigationType == ReplyNavigationType.BOTTOM_NAVIGATION) {
                 ReplyBottomNavigationBar(
                     currentTab = replyUiState.currentMailbox,
                     onTabPressed = onTabPressed,
                     navigationItemContentList = navigationItemContentList,
                     modifier = Modifier.fillMaxWidth()
+                        .testTag(stringResource(R.string.navigation_bottom))
                 )
             }
         }

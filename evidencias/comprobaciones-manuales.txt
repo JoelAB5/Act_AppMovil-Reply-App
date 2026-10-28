@@ -1,0 +1,11 @@
+OK: Navegacion compacta situada en la parte inferior
+OK: El correo compacto muestra el boton Atras
+OK: Atras del sistema regresa a la lista
+OK: Cambiar a Enviados filtra los correos de Recibidos
+OK: Navegacion mediana situada en el riel lateral
+OK: Tablet muestra lista y detalle al mismo tiempo
+OK: Seleccionar otro correo actualiza el detalle de la tablet
+OK: La vista expandida no muestra un boton Atras redundante
+OK: Se conserva el correo seleccionado al pasar de tablet a telefono
+OK: Al reducir la ventana aparece la pantalla de detalle individual
+OK: Atras en vista expandida cierra la actividad

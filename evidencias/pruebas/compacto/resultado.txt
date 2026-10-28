@@ -1,0 +1,38 @@
+INSTRUMENTATION_STATUS: class=com.example.reply.test.ReplyAppStateRestorationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.example.reply.test.ReplyAppStateRestorationTest:
+INSTRUMENTATION_STATUS: test=compactDevice_selectedEmailRetained_afterConfigChange
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.example.reply.test.ReplyAppStateRestorationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=compactDevice_selectedEmailRetained_afterConfigChange
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.example.reply.test.ReplyAppTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.example.reply.test.ReplyAppTest:
+INSTRUMENTATION_STATUS: test=compactDevice_verifyUsingBottomNavigation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.example.reply.test.ReplyAppTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=compactDevice_verifyUsingBottomNavigation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 6.963
+
+OK (2 tests)
+
+
+INSTRUMENTATION_CODE: -1
